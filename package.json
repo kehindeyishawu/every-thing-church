@@ -1,0 +1,19 @@
+{
+  "name": "etc-web-project",
+  "version": "1.0.0",
+  "description": "Every Thing Church is organisation providing holy services to aid churches in their worship",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kehindeyishawu/every-thing-church.git"
+  },
+  "author": "Kehinde Yishawu",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kehindeyishawu/every-thing-church/issues"
+  },
+  "homepage": "https://github.com/kehindeyishawu/every-thing-church#readme"
+}
