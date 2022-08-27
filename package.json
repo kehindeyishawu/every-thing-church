@@ -4,6 +4,7 @@
   "description": "Every Thing Church is organisation providing holy services to aid churches in their worship",
   "main": "app.js",
   "scripts": {
+    "npm start": "node app.js"
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
