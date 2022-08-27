@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/kehindeyishawu/every-thing-church/issues"
   },
-  "homepage": "https://github.com/kehindeyishawu/every-thing-church#readme"
+  "homepage": "https://github.com/kehindeyishawu/every-thing-church#readme",
+  "dependencies": {
+    "express": "^4.18.1"
+  }
 }
