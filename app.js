@@ -9,6 +9,6 @@ app.use(express.static(__dirname + "/public"))
 
 
 // Server initialization
-app.listen(5000, ()=>{
+app.listen(8080 || process.env.PORT, ()=>{
     console.log("Server has started running")
 })
