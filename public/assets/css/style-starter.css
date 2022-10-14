@@ -10330,7 +10330,10 @@ a.login:hover {
   .nav-fixed .search-right a {
     color: var(--heading-color); }
   a.login {
-    padding: 0px 0 10px; } }
+    padding: 0px 0 10px; } 
+  .gg-moon{
+    margin-top: 19.5px;
+  }}
 
 @media only screen and (max-width: 767px) {
   #site-footer .copyright,
