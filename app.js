@@ -8,8 +8,7 @@ app.set("view engine", "ejs")
 
 // route listeners
 app.get("/", (req, res)=>{
-    // res.render("index")
-    res.send("I am working actually kenny")
+    res.render("index")
 })
 app.get("/post", (req, res)=>{
     res.render("blog-posts")
