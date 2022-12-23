@@ -17,70 +17,70 @@
   </head>
   <body>
 
-<!-- about breadcrumb -->
-<section class="w3l-breadcrumb">
-    <div class="breadcrumb-bg breadcrumb-bg-about py-5 h-100">
+<!-- login section -->
+    <main class="breadcrumb-bg breadcrumb-bg-about py-5 vh-100">
+        <!-- toggle switch for light and dark theme -->
+        <div class="mobile-position d-lg-none">
+            <nav class="navigation">
+            <div class="theme-switch-wrapper font-weight-bold">
+                <label class="theme-switch" for="checkbox">
+                <input type="checkbox" id="checkbox">
+                <div class="mode-container py-1">
+                    <i class="gg-sun"></i>
+                    <i class="gg-moon"></i>
+                </div>
+                </label>
+            </div>
+            </nav>
+        </div>
+        <!-- //toggle switch for light and dark theme -->
         <div class="container pt-lg-5 pt-3 p-lg-4">
             <div class="row justify-content-center">
-                <div class="col-md-5">
+                <div class="col-md-8 col-lg-6">
                     <div class="map-content-9">
-                        <h5 class="mb-sm-4 mb-3 text-center">Login</h5>
-                        <!-- toggle switch for light and dark theme -->
-                        <!-- <div class="mobile-position">
-                            <nav class="navigation">
-                            <div class="theme-switch-wrapper">
-                                <label class="theme-switch" for="checkbox">
-                                <input type="checkbox" id="checkbox">
-                                <div class="mode-container py-1">
-                                    <i class="gg-sun"></i>
-                                    <i class="gg-moon"></i>
-                                </div>
-                                </label>
+                        <div class="row justify-content-center">
+                            <div class="col-3">
+                                <h5 class="mb-sm-4 mb-3 text-center">Login</h5>
                             </div>
-                            </nav>
-                        </div> -->
-                        <!-- //toggle switch for light and dark theme -->
+                            <div class="col-2 mt-1 d-none d-lg-block">
+                                <!-- toggle switch for light and dark theme -->
+                                <div class="mobile-position">
+                                    <nav class="navigation">
+                                    <div class="theme-switch-wrapper font-weight-bold">
+                                        <label class="theme-switch" for="checkbox">
+                                        <input type="checkbox" id="checkbox">
+                                        <div class="mode-container pb-4 py-1 px-1 rounded-circle bg-primary">
+                                            <i class="gg-sun"></i>
+                                            <i class="gg-moon"></i>
+                                        </div>
+                                        </label>
+                                    </div>
+                                    </nav>
+                                </div>
+                                <!-- //toggle switch for light and dark theme -->
+                            </div>
+                        </div>
                         <form action="https://sendmail.w3layouts.com/submitForm" method="post">
                             <div class="twice-two">
-                                <input type="text" class="form-control" name="w3lName" id="w3lName" placeholder="Name"
+                                <input type="text" class="form-control" name="user[firstName]" id="first-name" placeholder="First Name"
                                     required="">
-                                <input type="email" class="form-control" name="w3lSender" id="w3lSender" placeholder="Email"
+                                <input type="text" class="form-control" name="user[firstName]" id="last-name" placeholder="Last Name"
                                     required="">
                             </div>
                             <div class="twice">
-                                <input type="text" class="form-control" name="w3lSubject" id="w3lSubject"
-                                    placeholder="Subject" required="">
+                                <input type="password" class="form-control" name="user[password]" id="user-password"
+                                    placeholder="Password" required="">
                             </div>
-                            <textarea name="w3lMessage" class="form-control" id="w3lMessage" placeholder="Message"
-                                required=""></textarea>
                             <div class="text-right">
                                 <button type="submit" class="btn btn-primary btn-style mt-4">Send Message</button>
                             </div>
                         </form>
                     </div>
                 </div>
-                <div class="col-3">
-                    <!-- toggle switch for light and dark theme -->
-                    <div class="mobile-position">
-                        <nav class="navigation">
-                        <div class="theme-switch-wrapper">
-                            <label class="theme-switch" for="checkbox">
-                            <input type="checkbox" id="checkbox">
-                            <div class="mode-container py-1">
-                                <i class="gg-sun"></i>
-                                <i class="gg-moon"></i>
-                            </div>
-                            </label>
-                        </div>
-                        </nav>
-                    </div>
-                    <!-- //toggle switch for light and dark theme -->
-                </div>
             </div>
         </div>
-    </div>
-</section>
-<!-- //about breadcrumb -->
+    </main>
+<!-- login section -->
 
 
 <!-- Template JavaScript -->
