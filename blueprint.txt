@@ -4,3 +4,4 @@
 - post test pst unique's write up
 - Set up tinymce with crud
 - Create category page
+- seo optimization of the whole site, like you did on mavnew
