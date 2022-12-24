@@ -1,15 +1,28 @@
 const express = require("express"),
     router = express.Router(),
     passport = require("passport"),
-    { user, blogPost } = require("./models.js"),
+    { user } = require("./models.js"),
     { isLoggedIn, isSignin } = require("./middlewares.js");
 
 const publicFolder = __dirname + "/public/";
 
 // register user function
-(()=>{
-    console.log("hey")
-})
+// (()=>{
+//     const newUser = new user({ username: "ev@gmail.com" });
+//     newUser.firstName = "Unique";
+//     newUser.lastName = "Soniyi";
+//     newUser.phoneNo = "phone";
+//     user.register(newUser, "password", (err, user) => {
+//         if (err) {
+//             console.log(err);
+//             return
+//         }
+
+//         passport.authenticate("local")( (req, res)=> {
+//             console.log("User Created")
+//         });
+//     });
+// })()
 
 // Dashboard route
 router.get("/profile", isLoggedIn, (req, res) => {
@@ -38,15 +51,15 @@ router.get("/signup", (req, res) => {
 })
 // signup logic
 router.post("/signup", (req, res) => {
-    const newUser = new User({ username: req.body.username });
-    newUser.firstname = req.body.firstname;
-    newUser.lastname = req.body.lastname;
-    newUser.matric = req.body.matric;
-    newUser.phone = req.body.phone;
-    User.register(newUser, req.body.password, (err, user) => {
+    const newUser = new user({ username: req.body.username });
+    newUser.firstName = req.body.firstname;
+    newUser.lastName = req.body.lastname;
+    newUser.phoneNo = req.body.phone;
+    user.register(newUser, req.body.password, (err, user) => {
         if (err) {
             console.log(err);
-            return res.render("usernew", { error: err.message });
+            res.redirect("/contact")
+            // return res.render("usernew", { error: err.message });
         }
 
         passport.authenticate("local")(req, res, function () {

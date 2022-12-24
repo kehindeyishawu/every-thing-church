@@ -1,7 +1,12 @@
+Essential addons
 - refactor homepage
 - Create login system
 - Buy domain name
 - post test pst unique's write up
 - Set up tinymce with crud
-- Create category page
+
+
+Secondary addons
 - seo optimization of the whole site, like you did on mavnew
+- Create category page
+- Create Search feature
