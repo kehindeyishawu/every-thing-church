@@ -1,6 +1,5 @@
 Essential addons
 - refactor homepage
-- Create login system
 - Buy domain name
 - post test pst unique's write up
 - Set up tinymce with crud
@@ -12,3 +11,6 @@ Secondary addons
 - Create Search feature
 - fix page pagination
 - create ifsignedin go to Dashboard middleware
+- input confirm password logic
+- correct vh to normal height on signup/login form 
+- Create User profile page

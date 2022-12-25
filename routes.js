@@ -39,10 +39,6 @@ router.post("/login", passport.authenticate("local",
     });
 // **********************
 
-// signup form
-router.get("/signup", (req, res) => {
-    res.render("usernew")
-})
 // signup logic
 router.post("/signup", (req, res) => {
     const newUser = new user({ username: req.body.username });
@@ -65,9 +61,11 @@ router.post("/signup", (req, res) => {
 
 // logout logic
 router.get("/logout", (req, res) => {
-    req.logout();
-    req.flash("success", "Successfully Signed Out! See You Later");
-    res.redirect("/");
+    req.logout((err) => {
+        if (err) { return next(err); }
+        req.flash("success", "Successfully Signed Out! See You Later");
+        res.redirect('/');
+    })
 });
 
 module.exports = router;
