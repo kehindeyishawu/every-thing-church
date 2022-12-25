@@ -9,8 +9,9 @@ const userSchema = new mongoose.Schema(
         lastName: String,
         phoneNo: String,
         password: String,
-        status: {type: String, default: "writer"},
-        dateCreated: {type: Date, default: new Date()}
+        status: { type: String, default: "writer" },
+        isVerified: { type: Boolean, default: false },
+        dateCreated: { type: Date, default: new Date() }
     }
 )
 
@@ -18,14 +19,14 @@ userSchema.plugin(passportLocalMongoose)
 // ***********************
 
 const blogPostSchema = new mongoose.Schema({
-    title: {type: String, required: true},
-    frontImage: {type: String, required: true},
+    title: { type: String, required: true },
+    frontImage: { type: String, required: true },
     author: String,
-    category: {type: String, required:true},
-    contentBeforeQuote: {type: String, required: true},
-    contentAfterQuote: {type: String, required: true},
+    category: { type: String, required: true },
+    contentBeforeQuote: { type: String, required: true },
+    contentAfterQuote: { type: String, required: true },
     blockQoute: String,
-    dateCreated: {type: Date, default: new Date()}
+    dateCreated: { type: Date, default: new Date() }
 })
 
 const models = {

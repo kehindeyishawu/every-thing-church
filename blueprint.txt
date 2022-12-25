@@ -10,3 +10,5 @@ Secondary addons
 - seo optimization of the whole site, like you did on mavnew
 - Create category page
 - Create Search feature
+- fix page pagination
+- create ifsignedin go to Dashboard middleware

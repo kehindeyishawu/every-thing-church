@@ -59,6 +59,12 @@ app.get("/post", (req, res) => {
 app.get("/contact", (req, res) => {
     res.render("contact-page")
 })
+app.get("/etc_admin", (req, res)=>{
+    res.render("login-page")
+})
+app.get("/signup", (req, res)=>{
+    res.render("signup-page")
+})
 app.use(routes)
 
 // Server initialization

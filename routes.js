@@ -25,15 +25,10 @@ const publicFolder = __dirname + "/public/";
 // })()
 
 // Dashboard route
-router.get("/profile", isLoggedIn, (req, res) => {
-    res.render("profile/index")
+router.get("/dashboard", isLoggedIn, (req, res) => {
+    res.render("dashboard")
 })
 
-
-// login form
-router.get("/etc_admin", (req, res) => {
-    res.sendFile(publicFolder + "login-page.html")
-})
 // login logic
 router.post("/login", passport.authenticate("local",
     {
@@ -57,14 +52,17 @@ router.post("/signup", (req, res) => {
     newUser.phoneNo = req.body.phone;
     user.register(newUser, req.body.password, (err, user) => {
         if (err) {
-            console.log(err);
-            res.redirect("/contact")
+            console.log(err.message);
+            req.flash("error", err.message)
+            res.redirect("back")
+            return
             // return res.render("usernew", { error: err.message });
         }
 
         passport.authenticate("local")(req, res, function () {
-            req.flash("success", "Account Successfully Created! Nice to meet you " + req.body.firstname);
-            res.redirect("/");
+            // req.flash("success", "Account Successfully Created! Nice to meet you " + req.body.firstname);
+            res.redirect("/dashboard");
+            console.log("user created")
         });
     });
 })
