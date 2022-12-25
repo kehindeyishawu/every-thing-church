@@ -22,7 +22,7 @@ app.use(methodOverride('_method'));
 mongoose.set('strictQuery', false)
 mongoose.connect(process.env.DB_LINK)
     .catch(err => {
-        console.log("Error from DD", err.message)
+        console.log("Error from DD:", err.message)
     })
 
 // passport & connect-flash config

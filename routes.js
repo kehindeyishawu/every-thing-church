@@ -31,11 +31,11 @@ router.get("/dashboard", isLoggedIn, (req, res) => {
 // login logic
 router.post("/login", passport.authenticate("local",
     {
-        successRedirect: "/",
-        failureRedirect: "/login",
         failureFlash: true,
-        successFlash: `Welcome Back`
+        failureRedirect: "/etc_admin",
     }), (req, res) => {
+        req.flash("success", "Welcome Back")
+        res.redirect("/dashboard")
     });
 // **********************
 
