@@ -8,18 +8,17 @@ const publicFolder = __dirname + "/public/";
 
 // register user function
 // (()=>{
-//     const newUser = new user({ username: "ev@gmail.com" });
-//     newUser.firstName = "Unique";
-//     newUser.lastName = "Soniyi";
-//     newUser.phoneNo = "phone";
-//     user.register(newUser, "password", (err, user) => {
+//     const newUser = new user({ username: req.body.username });
+//     newUser.firstName = req.body.firstname;
+//     newUser.lastName = req.body.lastname;
+//     newUser.phoneNo = req.body.phone;
+//     user.register(newUser, req.body.password, (err, user) => {
 //         if (err) {
-//             console.log(err);
-//             return
+//             console.log(err.message);
 //         }
 
-//         passport.authenticate("local")( (req, res)=> {
-//             console.log("User Created")
+//         passport.authenticate("local")(req, res, function () {
+//             console.log("user created")
 //         });
 //     });
 // })()
@@ -53,10 +52,7 @@ router.post("/signup", (req, res) => {
     user.register(newUser, req.body.password, (err, user) => {
         if (err) {
             console.log(err.message);
-            req.flash("error", err.message)
-            res.redirect("back")
-            return
-            // return res.render("usernew", { error: err.message });
+            return res.render("signup-page", { error: err.message });
         }
 
         passport.authenticate("local")(req, res, function () {
