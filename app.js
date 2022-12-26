@@ -7,8 +7,8 @@ const LocalStrategy = require("passport-local");
 const passportLocalMongoose = require("passport-local-mongoose");
 const session = require("express-session");
 const flash = require("connect-flash");
-const {user, blogPost} = require("./models.js")
-const middleware = require("./middlewares.js");
+const { user, blogPost } = require("./models.js")
+const { isLoggedIn } = require("./middlewares.js");
 const routes = require("./routes")
 
 // config
@@ -59,11 +59,14 @@ app.get("/post", (req, res) => {
 app.get("/contact", (req, res) => {
     res.render("contact-page")
 })
-app.get("/etc_admin", (req, res)=>{
+app.get("/etc_admin", (req, res) => {
     res.render("login-page")
 })
-app.get("/signup", (req, res)=>{
+app.get("/signup", (req, res) => {
     res.render("signup-page")
+})
+app.get("/dashboard", (req, res) => {
+    res.render("dashboard")
 })
 app.use(routes)
 

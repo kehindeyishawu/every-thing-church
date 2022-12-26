@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <title>Contact Us | Everything Church</title>
+    <title>Dashboard | Everything Church</title>
 
     <!-- google fonts -->
     <link href="//fonts.googleapis.com/css?family=Nunito:400,700&display=swap" rel="stylesheet">
@@ -17,13 +17,28 @@
   </head>
   <body>
 <!--header-->
-<%-include("./blocks/header-1")%>
+<%-include("./blocks/header-2")%>
 <!--/header-->
 <!-- about breadcrumb -->
 <section class="w3l-breadcrumb">
     <div class="breadcrumb-bg breadcrumb-bg-about py-5">
         <div class="container pt-lg-5 pt-3 p-lg-4 pb-3">
-            <h2 class="title mt-5 pt-lg-5 pt-sm-3">Get in touch</h2>
+            <%if(success){%>
+                <div class="alert alert-success alert-dismissible fade show text-center" role="alert">
+                    <%=success%> right
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                </div>
+                <%}else if(error && error.length>0){%>
+                    <div class="alert alert-danger alert-dismissible fade show text-center" role="alert">
+                        <%=error%>
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                    </div>
+                    <%}%>
+            <h2 class="title mt-5 pt-lg-5 pt-sm-3">Welcome</h2>
             <ul class="breadcrumbs-custom-path pb-sm-5 pb-4 mt-2 text-center mb-md-5">
                 <li><a href="/">Home</a></li>
                 <li class="active"> / Contact us </li>

@@ -23,11 +23,6 @@ const publicFolder = __dirname + "/public/";
 //     });
 // })()
 
-// Dashboard route
-router.get("/dashboard", isLoggedIn, (req, res) => {
-    res.render("dashboard")
-})
-
 // login logic
 router.post("/login", passport.authenticate("local",
     {

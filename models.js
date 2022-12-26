@@ -21,12 +21,13 @@ userSchema.plugin(passportLocalMongoose)
 const blogPostSchema = new mongoose.Schema({
     title: { type: String, required: true },
     frontImage: { type: String, required: true },
-    author: String,
+    author: { type: String, required: true },
     category: { type: String, required: true },
     contentBeforeQuote: { type: String, required: true },
     contentAfterQuote: { type: String, required: true },
     blockQoute: String,
-    dateCreated: { type: Date, default: new Date() }
+    dateCreated: { type: Date, default: new Date() },
+    lastUpdated: { type: Date, default: new Date() }
 })
 
 const models = {

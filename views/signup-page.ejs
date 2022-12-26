@@ -40,14 +40,14 @@
             <div class="row justify-content-center">
               <div class="col-md-8 col-lg-6">
                 <div class="map-content-9">
-                  <%if(success && success.length>1){%>
+                  <%if(success && success.length>0){%>
                     <div class="alert alert-success alert-dismissible fade show" role="alert">
                       <%=success%>
                         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                           <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
-                    <%}else if(error && error.length>1){%>
+                    <%}else if(error && error.length>0){%>
                       <div class="alert alert-danger alert-dismissible fade show" role="alert">
                         <%=error%>
                           <button type="button" class="close" data-dismiss="alert" aria-label="Close">
