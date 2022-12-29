@@ -1,8 +1,8 @@
 const express = require("express"),
     router = express.Router(),
     passport = require("passport"),
-    { user } = require("./models.js"),
-    { isLoggedIn, isSignin } = require("./middlewares.js");
+    { user } = require("../models.js"),
+    { isLoggedIn, isSignin } = require("../middlewares.js");
 
 const publicFolder = __dirname + "/public/";
 

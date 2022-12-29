@@ -9,7 +9,8 @@ const session = require("express-session");
 const flash = require("connect-flash");
 const { user, blogPost } = require("./models.js")
 const { isLoggedIn } = require("./middlewares.js");
-const routes = require("./routes")
+const userRoutes = require("./routes/user");
+const postRoutes = require("./routes/post");
 
 // config
 require("dotenv").config()
@@ -68,7 +69,8 @@ app.get("/signup", (req, res) => {
 app.get("/dashboard", (req, res) => {
     res.render("dashboard")
 })
-app.use(routes)
+app.use(userRoutes)
+app.use("post", postRoutes)
 
 // Server initialization
 app.listen(process.env.PORT || 3000, () => {

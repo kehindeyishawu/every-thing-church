@@ -1,5 +1,5 @@
 <!--header-->
-<header id="site-header" class="fixed-top">
+<header id="site-header" class="fixed-top py-0">
   <div class="container">
     <nav class="navbar navbar-expand-lg navbar-dark stroke">
       <!-- if logo is image enable this  -->
@@ -53,16 +53,16 @@
                 <%=currentUser.firstName%> <span class="fa fa-angle-down"></span>
               </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item @@b__active" href="blog.html">Dashboard</a>
-                <a class="dropdown-item active" href="blog-single.html">Create post</a>
-                <a class="dropdown-item @@error__active" href="error.html"> Profile</a>
+                <a class="dropdown-item @@b__active" href="/dashboard">Dashboard</a>
+                <a class="dropdown-item active" href="post/new">Create post</a>
+                <!-- <a class="dropdown-item @@error__active" href="error.html"> Profile</a> -->
                 <a class="dropdown-item" href="/logout"> Logout</a>
               </div>
             </li>
           </ul>
           <%}else{%>
             <div class="top-quote mr-lg-2 text-center">
-              <a href="/signup" class="btn login mr-2"><span class="fa fa-user"></span> write for us</a>
+              <a href="/signup" class="btn login mr-2"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> write for us</a>
             </div>
             <%}%>
       </div>
