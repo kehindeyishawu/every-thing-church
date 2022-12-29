@@ -1,0 +1,46 @@
+<footer class="mt-5">
+    <div class="container">
+        <div class="row justify-content-around">
+            <a class="col-auto"><i class="fa fa-comments-o" aria-hidden="true"></i> Feedback</a>
+            <a class="col-auto"><i class="fa fa-question-circle" aria-hidden="true"></i> Contact Support</a>
+        </div>
+        
+    </div>
+    <!-- copyright -->
+    <section class="w3l-copyright text-center">
+        <!-- <div class="container">
+            <p class="copy-footer-29">© 2022 Everything Church. All rights reserved. Design by <a
+                    href="https://w3layouts.com/" target="_blank" rel="noopener noreferrer">
+                    W3Layouts</a></p>
+            <small>Website Crafted By <a class="website-crafter"
+                    href="https://www.linkedin.com/in/kehinde-yishawu/">Kehinde Yishawu</a></small>
+        </div> -->
+
+        <!-- move top -->
+        <button onclick="topFunction()" id="movetop" title="Go to top">
+            &#10548;
+        </button>
+        <script>
+            // When the user scrolls down 20px from the top of the document, show the button
+            window.onscroll = function () {
+                scrollFunction()
+            };
+
+            function scrollFunction() {
+                if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                    document.getElementById("movetop").style.display = "block";
+                } else {
+                    document.getElementById("movetop").style.display = "none";
+                }
+            }
+
+            // When the user clicks on the button, scroll to the top of the document
+            function topFunction() {
+                document.body.scrollTop = 0;
+                document.documentElement.scrollTop = 0;
+            }
+        </script>
+        <!-- /move top -->
+    </section>
+    <!-- //copyright -->
+</footer>

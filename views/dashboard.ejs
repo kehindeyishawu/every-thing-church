@@ -14,30 +14,70 @@
 
     <!-- Template CSS -->
     <link rel="stylesheet" href="assets/css/style-starter.css">
-
+    <style>
+        table{
+            color: var(--heading-color) !important;
+        }
+        table a{
+            color: var(--heading-color) !important;
+        }
+    </style>
 </head>
 
 <body>
     <!--header-->
     <%-include("./blocks/header-2")%>
         <!--/header-->
-        
+
         <main class="py-4">
             <h2 class="text-center font-weight-bold mt-5 py-lg-5 pt-sm-3 display-4">Welcome Unique Soniyi</h2>
             <div class="container">
-                <div class="cont-details">
-                    <h4 class="title-small">Get in touch</h4>
-                    <h3 class="title-big mb-4">Overview</h3>
-                    <p class="mb-sm-5 mb-4">Start working with Us, We guarantee that you’ll be able to have any
-                        issue resolved within 24 hours.</p>
-                    
+                <div class="row">
+                    <a href="" class="btn btn-sm btn-style btn-primary my-4 col-12 col-md-3">Create Post <i class="fa fa-plus" aria-hidden="true"></i></a>
                 </div>
+                <h3 class="title-big mb-4">Overview</h3>
+                <p class="mb-sm-5 mb-4">Your Dashboard serves as a control center for you to manage all your posts. If you need help navigating, you can always email our support centre.</p>
 
+                <div class="table-responsive-lg">
+                    <table class="table table-hover border-bottom text-center">
+                        <thead>
+                            <tr>
+                                <th scope="col" class="text-left">Name</th>
+                                <th scope="col">Status</th>
+                                <th scope="col">Edit</th>
+                                <th scope="col">Category</th>
+                                <th scope="col">Delete</th>
+                                <th scope="col">Date Created</th>
+                                <th scope="col">Last Updated</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="border-top-0">
+                                <td class="text-truncate text-left" style="max-width: 150px;"><a href=""><i class="fa fa-book" aria-hidden="true"></i> This is how to be a good christian in the presence of the lord</a></td>
+                                <td><small><i class="fa fa-dot-circle-o text-success" aria-hidden="true"></i></small> Published</td>
+                                <td><a href=""><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a></td>
+                                <td>Faith</td>
+                                <td><a href=""><i class="fa fa-trash-o" aria-hidden="true"></i></a></td>
+                                <td>@mdo</td>
+                                <td>@mdo</td>
+                            </tr>
+                            <tr>
+                                <td>Jacob</td>
+                                <td><small><i class="fa fa-dot-circle-o text-success" aria-hidden="true"></i></small> Published</td>
+                                <td><a href=""><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a></td>
+                                <td>Love</td>
+                                <td><a href=""><i class="fa fa-trash-o" aria-hidden="true"></i></a></td>
+                                <td>@fat</td>
+                                <td>@fat</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </main>
 
         <!-- footer -->
-        <%-include("./blocks/footer-1")%>
+        <%-include("./blocks/footer-2")%>
             <!-- //footer -->
 
             <!-- Template JavaScript -->

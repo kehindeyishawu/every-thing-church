@@ -3,9 +3,14 @@ Essential addons
 - Buy domain name
 - post test pst unique's write up
 - Set up tinymce with crud
+- 404 page
+
 
 
 Secondary addons
+- Put icons in relevant places
+- Allow categoryto be editable from dashboard
+- work on blog comments and add a 'comment' section to Dashboardtable to show no of comments a blog post has
 - seo optimization of the whole site, like you did on mavnew
 - Create category page
 - Create Search feature
