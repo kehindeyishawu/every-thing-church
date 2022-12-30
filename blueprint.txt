@@ -9,6 +9,7 @@ Essential addons
 
 
 Secondary addons
+- Later on include user image and names on home posts
 - Put icons in relevant places
 - Allow categoryto be editable from dashboard
 - work on blog comments and add a 'comment' section to Dashboardtable to show no of comments a blog post has

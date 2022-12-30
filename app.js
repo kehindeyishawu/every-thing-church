@@ -52,7 +52,12 @@ app.use((req, res, next) => {
 
 // route listeners
 app.get("/", (req, res) => {
-    res.render("index")
+    blogPost.find({}, (err, foundPosts)=>{
+        if (err){
+            return res.send(err)
+        }
+        res.render("index", {blogPosts: foundPosts})
+    })
 })
 app.get("/post", (req, res) => {
     res.render("single-post-page")
