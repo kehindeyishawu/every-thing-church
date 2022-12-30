@@ -31,10 +31,10 @@
         <!--/header-->
 
         <main class="py-4">
-            <h2 class="text-center font-weight-bold mt-5 py-lg-5 pt-sm-3 display-4">Welcome Unique Soniyi</h2>
+            <h2 class="text-center font-weight-bold mt-5 py-lg-5 pt-sm-3 display-4">Welcome <%=`${currentUser.firstName} ${currentUser.lastName}`%></h2>
             <div class="container">
                 <div class="row">
-                    <a href="" class="btn btn-sm btn-style btn-primary mt-5 mb-4 col-12 col-md-3">Create Post <i
+                    <a href="/post/new" class="btn btn-sm btn-style btn-primary mt-5 mb-4 col-12 col-md-3">Create Post <i
                             class="fa fa-plus" aria-hidden="true"></i></a>
                 </div>
                 <h3 class="title-big mb-4">Overview</h3>

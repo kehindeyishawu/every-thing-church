@@ -14,7 +14,7 @@ const postRoutes = require("./routes/post");
 
 // config
 require("dotenv").config()
-app.use(express.static(__dirname + "/public"))
+app.use(express.static(__dirname + "/public/"))
 app.set("view engine", "ejs")
 app.use(express.urlencoded({ extended: true }));
 app.use(methodOverride('_method'));
@@ -66,11 +66,14 @@ app.get("/etc_admin", (req, res) => {
 app.get("/signup", (req, res) => {
     res.render("signup-page")
 })
-app.get("/dashboard", (req, res) => {
+app.get("/dashboard", isLoggedIn, (req, res) => {
     res.render("dashboard")
 })
+// app.get("/sample", (req, res)=>{
+//     res.render("sample")
+// })
 app.use(userRoutes)
-app.use("post", postRoutes)
+app.use("/post", postRoutes)
 
 // Server initialization
 app.listen(process.env.PORT || 3000, () => {

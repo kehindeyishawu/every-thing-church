@@ -6,10 +6,10 @@ const middlewares = {
             return next()
         }
         req.flash("error", "You must be a loggedin to do this")
-        res.redirect("/login")
+        res.redirect("/etc_admin")
     },
 
-    isSignin: (req, res, next) => {
+    ifSignedIn: (req, res, next) => {
         if (req.isAuthenticated()) {
             res.redirect("/dashboard")
         }

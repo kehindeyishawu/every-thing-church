@@ -4,6 +4,7 @@ Essential addons
 - post test pst unique's write up
 - Set up tinymce with crud
 - 404 page
+- move posts-form back to post route folder
 
 
 

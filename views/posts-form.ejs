@@ -6,23 +6,21 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <title>Create Post | Everything Church</title>
+    <title>Create Blog Post | Everything Church</title>
 
     <!-- google fonts -->
     <link href="//fonts.googleapis.com/css?family=Nunito:400,700&display=swap" rel="stylesheet">
     <link href="//fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
     <!-- Template CSS -->
-    <link rel="stylesheet" href="assets/css/style-starter.css">
-    <style>
-        table {
-            color: var(--heading-color) !important;
-        }
-
-        table a {
-            color: var(--heading-color) !important;
-        }
-    </style>
+    <link rel="stylesheet" href="/assets/css/style-starter.css">
+    
+    <script src="/assets/js/tinymce/tinymce.min.js"></script>
+    <script>
+        tinymce.init({
+          selector: 'textarea#tiny'
+        });
+      </script>
 </head>
 
 <body>
@@ -32,27 +30,33 @@
 
         <main class="py-4 container">
             <h2 class="text-center font-weight-bold mt-5 py-lg-5 pt-sm-3 display-4">Create Blog Post</h2>
-            <form class="container">
+            <form class="container" action="/posts" method="post">
                 <div class="form-group">
-                        
+                    <label for="title">Title</label>
+                    <input type="text" class="form-control" id="title" name="title" required>
                 </div>
-                <div class="form-group"></div>
-                <div class="form-group"></div>
-                <div class="form-group"></div>
-                <div class="form-group"></div>
-                <div class="form-group"></div>
-                <div class="form-group"></div>
-                <div class="form-group"></div>
-                <div class="form-group"></div>
-                <div class="form-group"></div>
-                <div class="form-group"></div>
-                <div class="form-group"></div>
                 <div class="form-row">
-                    <div class="form-group"></div>
-                    <div class="form-group"></div>
-                    <a href="" class="btn btn-sm btn-style btn-primary mt-5 mb-4 col-12 col-md-3">Create Post <i
-                            class="fa fa-plus" aria-hidden="true"></i></a>
+                    <div class="form-group col-md-6">
+                        <label for="title-image">Title Image</label>
+                        <input type="file" class="form-control" name="image" id="title-image">
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="category">Category</label> <i class="fa fa-info-circle" aria-hidden="true" title="The contents and posts on the Everything Blog are centered around these areas: Faith, Love, Church, Business and Career. We focus specifically on these areas and choose to help christian perform better in these areas of their daily lives. Thus, all posts on the blog must strictly be focused on these core areas"></i>
+                        <select name="category" id="category" class="form-control">
+                            <option value="Faith">Faith</option>
+                            <option value="Love">Love</option>
+                            <option value="Church">Church</option>
+                            <option value="Business">Business</option>
+                            <option value="Career">Career</option>
+                        </select>
+                    </div>
                 </div>
+                <div class="form-group">
+                    <label for="tiny">Content Body</label>
+                    <textarea id="tiny" name="content"></textarea>
+                </div>
+                <button type="submit" class="btn btn-sm btn-style btn-primary mt-5 mb-4 col-12 col-md-3">Create Post <i
+                    class="fa fa-plus" aria-hidden="true"></i></button>
             </form>
         </main>
 
