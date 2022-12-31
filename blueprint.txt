@@ -1,17 +1,19 @@
 Essential addons
 - refactor homepage
-- Buy domain name
-- post test pst unique's write up
 - Set up tinymce with crud
 - 404 page
 - move posts-form back to post route folder
 - include momentjs for singleblog post time and on dashboard
 - add page html/author and date tags
 - add caption on which tag to use below tinymce form
+- handle single post page font-size[18px] and line-spacing
 
 
 
 Secondary addons
+- truncate blogTitle also home page or put limit on the character users can input
+- Also put height limit on hompage blogpost img starting from medium 0r md viewport
+- Join the sting in the post tile together, seperating each word with a '+'
 - Later on include user image and names on home posts
 - handle last updated logic for blog post creation
 - Put icons in relevant places

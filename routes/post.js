@@ -13,9 +13,12 @@ router.get("/new", isLoggedIn, (req, res)=>{
 
 router.get("/:id/:title", (req, res) => {
     blogPost.findById(req.params.id, (err, foundPost)=>{
-        if(err || foundPost.title !==req.params.title){
+        if(err){
             console.log("oops!!")
             return res.send(err.message)
+        }else if(foundPost.length<0){
+            console.log(foundPost)
+            return res.sendStatus(404)
         }
         res.render("single-post-page", {post: foundPost, date: testDate})
     })
@@ -29,7 +32,7 @@ router.post("/", isLoggedIn, (req, res)=>{
         if(err){
             return res.send(err.message)
         }
-        res.send(createdPost)
+        res.redirect(`/post/${createdPost.id}/${createdPost.title}`)
     })
 })
 
