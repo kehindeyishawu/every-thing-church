@@ -5,11 +5,15 @@ Essential addons
 - Set up tinymce with crud
 - 404 page
 - move posts-form back to post route folder
+- include momentjs for singleblog post time and on dashboard
+- add page html/author and date tags
+- add caption on which tag to use below tinymce form
 
 
 
 Secondary addons
 - Later on include user image and names on home posts
+- handle last updated logic for blog post creation
 - Put icons in relevant places
 - Allow categoryto be editable from dashboard
 - work on blog comments and add a 'comment' section to Dashboardtable to show no of comments a blog post has

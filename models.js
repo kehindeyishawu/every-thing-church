@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-const passportLocalMongoose = require("passport-local-mongoose")
+const passportLocalMongoose = require("passport-local-mongoose");
 
 // user schema
 const userSchema = new mongoose.Schema(
@@ -20,13 +20,14 @@ userSchema.plugin(passportLocalMongoose)
 
 const blogPostSchema = new mongoose.Schema({
     title: { type: String, required: true },
-    titleImage: String,
+    titleImage:  String,
+    summary: {type: String, required: true},
     author: { type: String, required: true },
     authorId: { type: String, required: true },
     category: { type: String, required: true },
     contentBody: { type: String, required: true },
-    dateCreated: { type: Date, default: new Date() },
-    lastUpdated: { type: Date, default: new Date() }
+    dateCreated: Date,
+    lastUpdated: Date
 })
 
 const models = {

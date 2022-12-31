@@ -7,14 +7,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <title>Everything Church Blog</title>
-    <link rel="shortcut icon" href="assets/images/logo.png" type="image/x-icon">
+    <link rel="shortcut icon" href="/assets/images/logo.png" type="image/x-icon">
     <!-- google fonts -->
     <link href="//fonts.googleapis.com/css?family=Nunito:400,700&display=swap" rel="stylesheet">
     <link href="//fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
     <!-- Template CSS -->
-    <link rel="stylesheet" href="assets/css/style-starter.css">
-
+    <link rel="stylesheet" href="/assets/css/style-starter.css">
 </head>
 
 <body>
@@ -119,9 +118,9 @@
                                 <div class="col-lg-4 col-md-6 item">
                                     <div class="card">
                                         <div class="card-header p-0 position-relative">
-                                            <a href="blog-single.html" class="zoom d-block">
+                                            <a href="/post/<%=blogPosts[0].id%>/<%=blogPosts[0].title%>" class="zoom d-block">
                                                 <img class="card-img-bottom d-block"
-                                                    src="assets/images/c4.jpg" alt="Card image cap">
+                                                    src="<%=blogPosts[0].titleImage%>" alt="Card image cap">
                                             </a>
                                             <div class="post-pos">
                                                 <a href="#reciepe" class="receipe blue">
@@ -150,14 +149,14 @@
                                                     </li>
                                                 </ul>
                                             </div> -->
-                                            <a href="/<%=blogPosts[0].id%>/<%=blogPosts[0].title%>"
+                                            <a href="/post/<%=blogPosts[0].id%>/<%=blogPosts[0].title%>"
                                                 class="course-desc">
                                                 <%=blogPosts[0].title%>
                                             </a>
-                                            <p class="mt-3 text-truncate"><%-blogPosts[0].contentBody%></p>
+                                            <p class="mt-3 text-truncate"><%-blogPosts[0].summary%></p>
                                         </div>
                                         <div class="card-footer">
-                                            <a href="/<%=blogPosts[0].id%>/<%=blogPosts[0].title%>"
+                                            <a href="/post/<%=blogPosts[0].id%>/<%=blogPosts[0].title%>"
                                                 class="read">Read More <span
                                                     class="fa fa-angle-right ml-1"></span></a>
                                         </div>
@@ -167,8 +166,8 @@
                                 <div class="col-lg-4 col-md-6 item mt-md-0 mt-5">
                                     <div class="card">
                                         <div class="card-header p-0 position-relative">
-                                            <a href="/<%=blogPosts[1].id%>/<%=blogPosts[1].title%>" class="zoom d-block">
-                                                <img class="card-img-bottom d-block" src="assets/images/c4.jpg"
+                                            <a href="/post/<%=blogPosts[1].id%>/<%=blogPosts[1].title%>" class="zoom d-block">
+                                                <img class="card-img-bottom d-block" src="<%=blogPosts[1].titleImage%>"
                                                     alt="Card image cap">
                                             </a>
                                             <div class="post-pos">
@@ -191,11 +190,11 @@
                                                     </li>
                                                 </ul>
                                             </div> -->
-                                            <a href="/<%=blogPosts[1].id%>/<%=blogPosts[1].title%>%>" class="course-desc"><%=blogPosts[1].title%></a>
-                                                <p class="mt-3 text-truncate"><%-blogPosts[1].contentBody%></p>
+                                            <a href="/post/<%=blogPosts[1].id%>/<%=blogPosts[1].title%>%>" class="course-desc"><%=blogPosts[1].title%></a>
+                                                <p class="mt-3 text-truncate"><%-blogPosts[1].summary%></p>
                                         </div>
                                         <div class="card-footer">
-                                            <a href="/<%=blogPosts[1].id%>/<%=blogPosts[1].title%>%>" class="read">Read More <span class="fa fa-angle-right ml-1"></span></a>
+                                            <a href="/post/<%=blogPosts[1].id%>/<%=blogPosts[1].title%>%>" class="read">Read More <span class="fa fa-angle-right ml-1"></span></a>
                                         </div>
                                     </div>
                                 </div>
@@ -203,8 +202,8 @@
                                 <div class="col-lg-4 col-md-6 item mt-lg-0 mt-5">
                                     <div class="card">
                                         <div class="card-header p-0 position-relative">
-                                            <a href="<%=blogPosts[2].id%>/<%=blogPosts[2].title%>" class="zoom d-block">
-                                                <img class="card-img-bottom d-block" src="assets/images/c1.jpg"
+                                            <a href="/post/<%=blogPosts[2].id%>/<%=blogPosts[2].title%>" class="zoom d-block">
+                                                <img class="card-img-bottom d-block" src="<%=blogPosts[2].titleImage%>"
                                                     alt="<%=blogPosts[2].title%>">
                                             </a>
                                             <div class="post-pos">
@@ -227,23 +226,23 @@
                                                     </li>
                                                 </ul>
                                             </div> -->
-                                            <a href="<%=blogPosts[2].id%>/<%=blogPosts[2].title%>" class="course-desc"><%=blogPosts[2].title%></a>
+                                            <a href="/post/<%=blogPosts[2].id%>/<%=blogPosts[2].title%>" class="course-desc"><%=blogPosts[2].title%></a>
                                             
-                                            <p class="mt-3"><%=blogPosts[2].contentBody%></p>
+                                            <p class="mt-3 text-truncate"><%-blogPosts[2].summary%></p>
                                         </div>
                                         <div class="card-footer">
-                                            <a href="<%=blogPosts[2].id%>/<%=blogPosts[2].title%>" class="read">Read More <span class="fa fa-angle-right ml-1"></span></a>
+                                            <a href="/post/<%=blogPosts[2].id%>/<%=blogPosts[2].title%>" class="read">Read More <span class="fa fa-angle-right ml-1"></span></a>
                                         </div>
                                     </div>
                                 </div>
 
                                 <%for (let index = 3; index < blogPosts.length; index++) {%>
-                                    const e = blogPosts[index];
+                                    <%const e = blogPosts[index];%>
                                     
                                     <div class="col-lg-4 col-md-6 item mt-5 pt-lg-2">
                                         <div class="card">
                                             <div class="card-header p-0 position-relative">
-                                                <a href="<%=`/${e.id}/${e.title}`%>" class="zoom d-block">
+                                                <a href="<%=`/post/${e.id}/${e.title}`%>" class="zoom d-block">
                                                     <img class="card-img-bottom d-block" src="<%=`${e.titleImage}`%>"
                                                         alt="Card image cap">
                                                 </a>
@@ -252,27 +251,27 @@
                                                 </div>
                                             </div>
                                             <div class="card-body course-details">
-                                                <div class="price-review d-flex justify-content-between mb-1align-items-center">
+                                                <!-- <div class="price-review d-flex justify-content-between mb-1align-items-center">
                                                     <div class="author align-items-center">
-                                                        <!-- <img src="assets/images/a4.jpg" alt="" class="img-fluid rounded-circle"> -->
+                                                        <img src="assets/images/a4.jpg" alt="" class="img-fluid rounded-circle">
                                                         <ul class="blog-meta">
                                                             <li>
                                                                <a href="#author"> <%=e.author%></a>
                                                             </li>
                                                         </ul>
                                                     </div>
-                                                    <!-- <ul class="blog-meta">
+                                                    <ul class="blog-meta">
                                                         <li>
                                                             <a href="#comments"> <span class="fa fa-comments-o"></span> 5</a>
                                                         </li>
-                                                    </ul> -->
-                                                </div>
-                                                <a href="<%=`/${e.id}/${e.title}`%>" class="course-desc"><%=e.title%>
+                                                    </ul>
+                                                </div> -->
+                                                <a href="<%=`/post/${e.id}/${e.title}`%>" class="course-desc"><%=e.title%>
                                                 </a>
-                                                <p class="mt-3 text-truncate"><%=e.contentBody%></p>
+                                                <p class="mt-3 text-truncate"><%-e.summary%></p>
                                             </div>
                                             <div class="card-footer">
-                                                <a href="<%=`/${e.id}/${e.title}`%>" class="read">Read More <span class="fa fa-angle-right ml-1"></span></a>
+                                                <a href="<%=`/post/${e.id}/${e.title}`%>" class="read">Read More <span class="fa fa-angle-right ml-1"></span></a>
                                             </div>
                                         </div>
                                     </div>
@@ -281,7 +280,7 @@
                                     <div class="col-lg-4 col-md-6 item">
                                         <div class="card">
                                             <div class="card-header p-0 position-relative">
-                                                <a href="blog-single.html" class="zoom d-block">
+                                                <a href="/post/<%=blogPosts[0].id%>/<%=blogPosts[0].title%>" class="zoom d-block">
                                                     <img class="card-img-bottom d-block"
                                                         src="<%=blogPosts[0].titleImage%>" alt="Card image cap">
                                                 </a>
@@ -312,14 +311,14 @@
                                                         </li>
                                                     </ul>
                                                 </div> -->
-                                                <a href="/<%=blogPosts[0].id%>/<%=blogPosts[0].title%>"
+                                                <a href="/post/<%=blogPosts[0].id%>/<%=blogPosts[0].title%>"
                                                     class="course-desc">
                                                     <%=blogPosts[0].title%>
                                                 </a>
-                                                <p class="mt-3 text-truncate"><%-blogPosts[0].contentBody%></p>
+                                                <p class="mt-3 text-truncate"><%-blogPosts[0].summary%></p>
                                             </div>
                                             <div class="card-footer">
-                                                <a href="/<%=blogPosts[0].id%>/<%=blogPosts[0].title%>"
+                                                <a href="/post/<%=blogPosts[0].id%>/<%=blogPosts[0].title%>"
                                                     class="read">Read More <span
                                                         class="fa fa-angle-right ml-1"></span></a>
                                             </div>
@@ -329,9 +328,9 @@
                                         <div class="col-lg-4 col-md-6 item">
                                             <div class="card">
                                                 <div class="card-header p-0 position-relative">
-                                                    <a href="blog-single.html" class="zoom d-block">
+                                                    <a href="/post/<%=blogPosts[0].id%>/<%=blogPosts[0].title%>" class="zoom d-block">
                                                         <img class="card-img-bottom d-block"
-                                                            src="assets/images/c4.jpg" alt="Card image cap">
+                                                            src="<%=blogPosts[0].titleImage%>" alt="Card image cap">
                                                     </a>
                                                     <div class="post-pos">
                                                         <a href="#reciepe" class="receipe blue">
@@ -360,14 +359,14 @@
                                                             </li>
                                                         </ul>
                                                     </div> -->
-                                                    <a href="/<%=blogPosts[0].id%>/<%=blogPosts[0].title%>"
+                                                    <a href="/post/<%=blogPosts[0].id%>/<%=blogPosts[0].title%>"
                                                         class="course-desc">
                                                         <%=blogPosts[0].title%>
                                                     </a>
-                                                    <p class="mt-3 text-truncate"><%-blogPosts[0].contentBody%></p>
+                                                    <p class="mt-3 text-truncate"><%-blogPosts[0].summary%></p>
                                                 </div>
                                                 <div class="card-footer">
-                                                    <a href="/<%=blogPosts[0].id%>/<%=blogPosts[0].title%>"
+                                                    <a href="/post/<%=blogPosts[0].id%>/<%=blogPosts[0].title%>"
                                                         class="read">Read More <span
                                                             class="fa fa-angle-right ml-1"></span></a>
                                                 </div>
@@ -377,8 +376,8 @@
                                         <div class="col-lg-4 col-md-6 item mt-md-0 mt-5">
                                             <div class="card">
                                                 <div class="card-header p-0 position-relative">
-                                                    <a href="/<%=blogPosts[1].id%>/<%=blogPosts[1].title%>" class="zoom d-block">
-                                                        <img class="card-img-bottom d-block" src="assets/images/c4.jpg"
+                                                    <a href="/post/<%=blogPosts[1].id%>/<%=blogPosts[1].title%>" class="zoom d-block">
+                                                        <img class="card-img-bottom d-block" src="<%=blogPosts[1].titleImage%>"
                                                             alt="Card image cap">
                                                     </a>
                                                     <div class="post-pos">
@@ -401,11 +400,11 @@
                                                             </li>
                                                         </ul>
                                                     </div> -->
-                                                    <a href="/<%=blogPosts[1].id%>/<%=blogPosts[1].title%>%>" class="course-desc"><%=blogPosts[1].title%></a>
-                                                        <p class="mt-3 text-truncate"><%-blogPosts[1].contentBody%></p>
+                                                    <a href="/post/<%=blogPosts[1].id%>/<%=blogPosts[1].title%>" class="course-desc"><%=blogPosts[1].title%></a>
+                                                        <p class="mt-3 text-truncate"><%-blogPosts[1].summary%></p>
                                                 </div>
                                                 <div class="card-footer">
-                                                    <a href="/<%=blogPosts[1].id%>/<%=blogPosts[1].title%>%>" class="read">Read More <span class="fa fa-angle-right ml-1"></span></a>
+                                                    <a href="/post/<%=blogPosts[1].id%>/<%=blogPosts[1].title%>" class="read">Read More <span class="fa fa-angle-right ml-1"></span></a>
                                                 </div>
                                             </div>
                                         </div>
@@ -413,9 +412,9 @@
                                             <div class="col-lg-4 col-md-6 item">
                                                 <div class="card">
                                                     <div class="card-header p-0 position-relative">
-                                                        <a href="blog-single.html" class="zoom d-block">
+                                                        <a href="/post/<%=blogPosts[1].id%>/<%=blogPosts[0].title%>" class="zoom d-block">
                                                             <img class="card-img-bottom d-block"
-                                                                src="assets/images/c4.jpg" alt="Card image cap">
+                                                                src="<%=blogPosts[0].titleImage%>" alt="Card image cap">
                                                         </a>
                                                         <div class="post-pos">
                                                             <a href="#reciepe" class="receipe blue">
@@ -444,14 +443,14 @@
                                                                 </li>
                                                             </ul>
                                                         </div> -->
-                                                        <a href="/<%=blogPosts[0].id%>/<%=blogPosts[0].title%>"
+                                                        <a href="/post/<%=blogPosts[0].id%>/<%=blogPosts[0].title%>"
                                                             class="course-desc">
                                                             <%=blogPosts[0].title%>
                                                         </a>
-                                                        <p class="mt-3 text-truncate"><%-blogPosts[0].contentBody%></p>
+                                                        <p class="mt-3 text-truncate"><%-blogPosts[0].summary%></p>
                                                     </div>
                                                     <div class="card-footer">
-                                                        <a href="/<%=blogPosts[0].id%>/<%=blogPosts[0].title%>"
+                                                        <a href="/post/<%=blogPosts[0].id%>/<%=blogPosts[0].title%>"
                                                             class="read">Read More <span
                                                                 class="fa fa-angle-right ml-1"></span></a>
                                                     </div>
@@ -461,7 +460,7 @@
                                             <div class="col-lg-4 col-md-6 item mt-md-0 mt-5">
                                                 <div class="card">
                                                     <div class="card-header p-0 position-relative">
-                                                        <a href="/<%=blogPosts[1].id%>/<%=blogPosts[1].title%>" class="zoom d-block">
+                                                        <a href="/post/<%=blogPosts[1].id%>/<%=blogPosts[1].title%>" class="zoom d-block">
                                                             <img class="card-img-bottom d-block" src="assets/images/c4.jpg"
                                                                 alt="Card image cap">
                                                         </a>
@@ -485,11 +484,11 @@
                                                                 </li>
                                                             </ul>
                                                         </div> -->
-                                                        <a href="/<%=blogPosts[1].id%>/<%=blogPosts[1].title%>%>" class="course-desc"><%=blogPosts[1].title%></a>
-                                                            <p class="mt-3 text-truncate"><%-blogPosts[1].contentBody%></p>
+                                                        <a href="/post/<%=blogPosts[1].id%>/<%=blogPosts[1].title%>%>" class="course-desc"><%=blogPosts[1].title%></a>
+                                                            <p class="mt-3 text-truncate"><%-blogPosts[1].summary%></p>
                                                     </div>
                                                     <div class="card-footer">
-                                                        <a href="/<%=blogPosts[1].id%>/<%=blogPosts[1].title%>%>" class="read">Read More <span class="fa fa-angle-right ml-1"></span></a>
+                                                        <a href="/post/<%=blogPosts[1].id%>/<%=blogPosts[1].title%>%>" class="read">Read More <span class="fa fa-angle-right ml-1"></span></a>
                                                     </div>
                                                 </div>
                                             </div>
@@ -497,8 +496,8 @@
                                             <div class="col-lg-4 col-md-6 item mt-lg-0 mt-5">
                                                 <div class="card">
                                                     <div class="card-header p-0 position-relative">
-                                                        <a href="<%=blogPosts[2].id%>/<%=blogPosts[2].title%>" class="zoom d-block">
-                                                            <img class="card-img-bottom d-block" src="assets/images/c1.jpg"
+                                                        <a href="/post/<%=blogPosts[2].id%>/<%=blogPosts[2].title%>" class="zoom d-block">
+                                                            <img class="card-img-bottom d-block" src="<%=blogPosts[2].titleImage%>"
                                                                 alt="<%=blogPosts[2].title%>">
                                                         </a>
                                                         <div class="post-pos">
@@ -521,12 +520,12 @@
                                                                 </li>
                                                             </ul>
                                                         </div> -->
-                                                        <a href="<%=blogPosts[2].id%>/<%=blogPosts[2].title%>" class="course-desc"><%=blogPosts[2].title%></a>
+                                                        <a href="/post/<%=blogPosts[2].id%>/<%=blogPosts[2].title%>" class="course-desc"><%=blogPosts[2].title%></a>
                                                         
-                                                        <p class="mt-3"><%=blogPosts[2].contentBody%></p>
+                                                        <p class="mt-3 text-truncate"><%-blogPosts[2].summary%></p>
                                                     </div>
                                                     <div class="card-footer">
-                                                        <a href="<%=blogPosts[2].id%>/<%=blogPosts[2].title%>" class="read">Read More <span class="fa fa-angle-right ml-1"></span></a>
+                                                        <a href="/post/<%=blogPosts[2].id%>/<%=blogPosts[2].title%>" class="read">Read More <span class="fa fa-angle-right ml-1"></span></a>
                                                     </div>
                                                 </div>
                                             </div>

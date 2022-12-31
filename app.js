@@ -59,9 +59,6 @@ app.get("/", (req, res) => {
         res.render("index", {blogPosts: foundPosts})
     })
 })
-app.get("/post", (req, res) => {
-    res.render("single-post-page")
-})
 app.get("/contact", (req, res) => {
     res.render("contact-page")
 })

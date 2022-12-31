@@ -12,7 +12,7 @@
     <link href="//fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     
     <!-- Template CSS -->
-    <link rel="stylesheet" href="assets/css/style-liberty.css">
+    <link rel="stylesheet" href="/assets/css/style-liberty.css">
     
   </head>
   <body>
@@ -23,12 +23,12 @@
 <section class="w3l-breadcrumb">
     <div class="breadcrumb-bg breadcrumb-bg-about py-5">
         <div class="container pt-lg-5 pt-3 p-lg-4 pb-3">
-            <h1 class="title mt-5 pt-lg-5 pt-sm-3 text-center text-white text-bold font-weight-bold display-4">Open Programming Courses for everyone </h1>
+            <h1 class="title mt-5 pt-lg-5 pt-sm-3 text-center text-white text-bold font-weight-bold display-4"><%=post.title%> </h1>
             <!-- <h2 class="title mt-5 pt-lg-5 pt-sm-3">Open Programming Courses for everyone </h2> -->
             <ul class="breadcrumbs-custom-path pb-sm-5 pb-4 mt-2 text-center mb-md-5">
-                <li><a href="index.html">Home</a></li>
-                <li class="active"> / pages </li>
-                <li class="active"> / blog single page </li>
+                <li><a href="/">Home</a></li>
+                <li class="active"> / posts </li>
+                <li class="active"> / <%=post.title%> </li>
             </ul>
         </div>
     </div>
@@ -43,25 +43,20 @@
 <section class="text-11 pb-5">
     <div class="text11 py-lg-5 py-md-4">
         <div class="container">
-            <img src="assets/images/banner1.jpg" class="img-fluid radius-image" alt="" />
+          <div class="my-2 display-5">
+            <b class="mr-5 ml-2">
+              <i class="fa fa-user" aria-hidden="true"></i> <%=post.author%>
+            </b>
+            <b>
+              Last Updated: <%=date%>
+            </b>
+          </div>
+            <img src="/assets/images/banner1.jpg" class="img-fluid radius-image" alt="" />
             <div class="text11-content pt-5">
               <!-- if you aren't using h4 as the first heading here make sure pt-4 class is added above as shown for spacings for spacings. the h4 tag automatically has margin spacing above it i.e mt-4-->
                 <!-- <h4 class="">How to improve knowledge skills</h4>  -->
                 <!-- <h2 class="font-weight-bold">How to improve knowledge skills</h2> -->
-                
-                <h5 class="quote">
-                    Donec et ipsum faucibus arcu ipsum elementum, luctus justo. ac purus semper. Fusce faucibus ante
-                    vitae justo efficitur sed et elementum. Donec ipsum faucibus arcu elementum, luctus justo.
-                    <footer class="blockquote-footer mt-3"> Denis Robinson</footer>
-                </h5>
-
-                <!-- <div class="text-list mb-4">
-                    <ol>
-                        <li>Quisque sagittis lacus eu lorem sodalesd enean adipiscing.</li>
-                        <li>Donec ipsum faucibus arcu elementum, luctus justo.</li>
-                        <li>Lorem ipsum dolor sit, amet consectetur elit. Expedita qui fugit quod.</li>
-                    </ol>
-                </div> -->
+                <%-post.contentBody%>
 
                 <!-- <div class="social-share-blog mt-md-5 mt-4">
                     <ul class="column3 social m-0 p-0">
@@ -75,13 +70,15 @@
                     </ul>
                 </div> -->
 
-                <!-- <div class="new-posts clearfix">
-                    <a class="prev-post pull-left" href="#prev"><span class="fa fa-arrow-left"
-                            aria-hidden="true"></span>
-                        Previous Post</a>
-                    <a class="next-post pull-right" href="#next">Next Post <span class="fa fa-arrow-right"
-                            aria-hidden="true"></span></a>
-                </div> -->
+                <%if(currentUser){%>
+                  <div class="new-posts clearfix">
+                    <a class="prev-post pull-left" href="#prev"><i class="fa fa-pencil-square-o fa-lg"
+                            aria-hidden="true"></i>
+                        Edit Post</a>
+                    <a class="next-post pull-right" href="#next">Delete Post <i class="fa fa-trash-o fa-lg"
+                            aria-hidden="true"></i></a>
+                </div>
+                <%}%>
 
 
                 <div class="item mt-5 w3l-grids-block-5 w3l-courses">
@@ -91,7 +88,7 @@
                             <div class="card">
                                 <div class="card-header p-0 position-relative">
                                     <a href="blog-single.html" class="zoom d-block">
-                                        <img class="card-img-bottom d-block" src="assets/images/c1.jpg"
+                                        <img class="card-img-bottom d-block" src="/assets/images/c1.jpg"
                                             alt="Card image cap">
                                     </a>
                                     <div class="post-pos">
@@ -101,7 +98,7 @@
                                 <div class="card-body course-details">
                                     <div class="price-review d-flex justify-content-between mb-1align-items-center">
                                         <div class="author align-items-center">
-                                            <img src="assets/images/a2.jpg" alt="" class="img-fluid rounded-circle">
+                                            <img src="/assets/images/a2.jpg" alt="" class="img-fluid rounded-circle">
                                             <ul class="blog-meta">
                                                 <li>
                                                    <a href="#author"> Charlotte</a>
@@ -128,14 +125,14 @@
                             <div class="card">
                                 <div class="card-header p-0 position-relative">
                                     <a href="blog-single.html" class="zoom d-block">
-                                        <img class="card-img-bottom d-block" src="assets/images/c2.jpg"
+                                        <img class="card-img-bottom d-block" src="/assets/images/c2.jpg"
                                             alt="Card image cap">
                                     </a>
                                 </div>
                                 <div class="card-body course-details">
                                     <div class="price-review d-flex justify-content-between mb-1align-items-center">
                                         <div class="author align-items-center">
-                                            <img src="assets/images/a2.jpg" alt="" class="img-fluid rounded-circle">
+                                            <img src="/assets/images/a2.jpg" alt="" class="img-fluid rounded-circle">
                                             <ul class="blog-meta">
                                                 <li>
                                                    <a href="#author"> Charlotte</a>
@@ -168,20 +165,43 @@
 <%- include("./blocks/footer-1.ejs") %>
 <!-- //footer -->
 
-<!-- Template JavaScript -->
-<script src="assets/js/jquery-3.3.1.min.js"></script>
+<!-- Custom Js -->
+<script>
+  const hfive = document.querySelectorAll('h5')
+  hfive.forEach(e => {
+    e.classList.add("quote")
+    e.innerHTML+= `<footer class="blockquote-footer mt-3"> Denis Robinson</footer>`
+  });
 
-<script src="assets/js/theme-change.js"></script>
+  const lists = document.querySelectorAll("ol");
+  lists.forEach(e => {
+    e.outerHTML = `<div class="text-list">
+                    <ol>
+                      ${e.innerHTML}
+                    </ol>
+                </div>`
+  });
+
+  const htwo = document.querySelectorAll("h2");
+  htwo.forEach(e => {
+    e.classList.add("font-weight-bold")
+  });
+</script>
+
+<!-- Template JavaScript -->
+<script src="/assets/js/jquery-3.3.1.min.js"></script>
+
+<script src="/assets/js/theme-change.js"></script>
 
 <!-- stats number counter-->
-<script src="assets/js/jquery.waypoints.min.js"></script>
-<script src="assets/js/jquery.countup.js"></script>
+<script src="/assets/js/jquery.waypoints.min.js"></script>
+<script src="/assets/js/jquery.countup.js"></script>
 <script>
   $('.counter').countUp();
 </script>
 <!-- //stats number counter -->
 
-<script src="assets/js/owl.carousel.js"></script>
+<script src="/assets/js/owl.carousel.js"></script>
 <!-- script for banner slider-->
 <script>
   $(document).ready(function () {
@@ -282,7 +302,7 @@
 </script>
 <!--//MENU-JS-->
 
-<script src="assets/js/bootstrap.min.js"></script>
+<script src="/assets/js/bootstrap.min.js"></script>
 
 
 
