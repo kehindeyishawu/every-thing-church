@@ -5,8 +5,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <title>Study Course - Education Category Bootstrap Responsive Template | Blog single : W3layouts</title>
-
+    <title> <%=post.title%> | Everything Church </title>
+    <link rel="shortcut icon" href="/assets/images/pink-logo.png" type="image/x-icon">
     <!-- google fonts -->
     <link href="//fonts.googleapis.com/css?family=Nunito:400,700&display=swap" rel="stylesheet">
     <link href="//fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
@@ -44,11 +44,8 @@
     <div class="text11 py-lg-5 py-md-4">
         <div class="container">
           <div class="my-2 display-5">
-            <b class="mr-5 ml-2">
-              <i class="fa fa-user" aria-hidden="true"></i> <%=post.author%>
-            </b>
-            <b>
-              Last Updated: <%=date%>
+            <b class="ml-2">
+              <i class="fa fa-user" aria-hidden="true"></i> <%=post.author%> | Updated <%=update%>
             </b>
           </div>
             <img src="<%=post.titleImage%>" class="img-fluid radius-image" alt="" />

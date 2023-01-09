@@ -22,6 +22,7 @@ app.use(methodOverride('_method'));
 // Database connection via mongoose
 mongoose.set('strictQuery', false)
 mongoose.connect(process.env.DB_LINK)
+    .then(() => { console.log("Connected To DB") })
     .catch(err => {
         console.log("Error from DD:", err.message)
     })
@@ -52,11 +53,11 @@ app.use((req, res, next) => {
 
 // route listeners
 app.get("/", (req, res) => {
-    blogPost.find({}, (err, foundPosts)=>{
-        if (err){
+    blogPost.find({}, (err, foundPosts) => {
+        if (err) {
             return res.send(err)
         }
-        res.render("index", {blogPosts: foundPosts})
+        res.render("index", { blogPosts: foundPosts })
     })
 })
 app.get("/contact", (req, res) => {
@@ -76,6 +77,9 @@ app.get("/dashboard", isLoggedIn, (req, res) => {
 // })
 app.use(userRoutes)
 app.use("/post", postRoutes)
+app.use((req, res, next)=>{
+    res.status(404).render("404-page")
+})
 
 // Server initialization
 app.listen(process.env.PORT || 3000, () => {

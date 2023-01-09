@@ -26,8 +26,8 @@ const blogPostSchema = new mongoose.Schema({
     authorId: { type: String, required: true },
     category: { type: String, required: true },
     contentBody: { type: String, required: true },
-    dateCreated: Date,
-    lastUpdated: Date
+    dateCreated: { type: Date, default: new Date() },
+    lastUpdated: { type: Date, default: new Date() }
 })
 
 const models = {

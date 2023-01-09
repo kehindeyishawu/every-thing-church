@@ -7,10 +7,14 @@ Essential addons
 - add page html/author and date tags
 - add caption on which tag to use below tinymce form
 - handle single post page font-size[18px] and line-spacing
+- Delete all users & post after completion and reset
+- Move h5 style to blockquote tag
+- Forbid "?" charcter on edit post form
 
 
 
 Secondary addons
+- restrict image upload size
 - truncate blogTitle also home page or put limit on the character users can input
 - Also put height limit on hompage blogpost img starting from medium 0r md viewport
 - Join the sting in the post tile together, seperating each word with a '+'
@@ -27,3 +31,4 @@ Secondary addons
 - input confirm password logic
 - correct vh to normal height on signup/login form 
 - Create User profile page
+- Apply appropriate status code to some routes

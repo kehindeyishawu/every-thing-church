@@ -1,10 +1,8 @@
 const express = require("express"),
     router = express.Router(),
     passport = require("passport"),
-    { user } = require("../models.js"),
-    { isLoggedIn, isSignin } = require("../middlewares.js");
+    { user } = require("../models.js");
 
-const publicFolder = __dirname + "/public/";
 
 // register user function
 // (()=>{
@@ -30,7 +28,9 @@ router.post("/login", passport.authenticate("local",
         failureRedirect: "/etc_admin",
     }), (req, res) => {
         req.flash("success", "Welcome Back")
-        res.redirect("/dashboard")
+        const redirectUrl = req.app.locals.returnTo || "/dashboard";
+        delete req.app.locals.returnTo;
+        res.redirect(redirectUrl);
     });
 // **********************
 
