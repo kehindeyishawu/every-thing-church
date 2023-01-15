@@ -14,6 +14,7 @@ Essential addons
 
 
 Secondary addons
+- add writer name back to listed blog post on everythingchurch
 - restrict image upload size
 - truncate blogTitle also home page or put limit on the character users can input
 - Also put height limit on hompage blogpost img starting from medium 0r md viewport

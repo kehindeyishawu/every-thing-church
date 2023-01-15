@@ -4,8 +4,7 @@ const mongoose = require("mongoose");
 const methodOverride = require("method-override");
 const passport = require("passport");
 const LocalStrategy = require("passport-local");
-const passportLocalMongoose = require("passport-local-mongoose");
-const session = require("express-session");
+const mongoSanitize = require('express-mongo-sanitize');
 const flash = require("connect-flash");
 const { user, blogPost } = require("./models.js")
 const { isLoggedIn } = require("./middlewares.js");
@@ -26,6 +25,14 @@ mongoose.connect(process.env.DB_LINK)
     .catch(err => {
         console.log("Error from DD:", err.message)
     })
+
+app.use(
+    mongoSanitize({
+        onSanitize: ({ req, key }) => {
+            console.warn(`This request[${key}] is sanitized`, req);
+        },
+    }),
+);
 
 // passport & connect-flash config
 app.use(flash());
@@ -77,7 +84,7 @@ app.get("/dashboard", isLoggedIn, (req, res) => {
 // })
 app.use(userRoutes)
 app.use("/post", postRoutes)
-app.use((req, res, next)=>{
+app.use((req, res, next) => {
     res.status(404).render("404-page")
 })
 

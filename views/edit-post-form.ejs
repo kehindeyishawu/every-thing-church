@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>Edit Blog Post | Everything Church</title>
+    <link rel="shortcut icon" href="/assets/images/pink-logo.png" type="image/x-icon">
+    <!-- google fonts -->
+    <link href="//fonts.googleapis.com/css?family=Nunito:400,700&display=swap" rel="stylesheet">
+    <link href="//fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <!-- Template CSS -->
+    <link rel="stylesheet" href="/assets/css/style-starter.css">
+
+    <script src="/assets/js/tinymce/tinymce.min.js"></script>
+    <script>
+        tinymce.init({
+            selector: 'textarea#tiny'
+        });
+    </script>
+</head>
+
+<body>
+    <!--header-->
+    <%-include("./blocks/header-2")%>
+        <!--/header-->
+
+        <main class="py-4 container">
+            <h2 class="text-center font-weight-bold mt-5 py-lg-5 pt-sm-3 display-4">Create Blog Post</h2>
+            <form class="container" action="/post/<%=postContent.id%>?_method=patch" method="post">
+                <div class="form-group">
+                    <label for="title">Title</label>
+                    <input type="text" class="form-control" id="title" name="title" maxlength="57" minlength="6" value="<%= postContent.title%>" required>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="title-image">Title Image</label>
+                        <input type="file" class="form-control" name="image" id="title-image">
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="category">Category</label> <i class="fa fa-info-circle" aria-hidden="true"
+                            title="The contents and posts on the Everything Blog are centered around these areas: Faith, Love, Church, Business and Career. We focus specifically on these areas and choose to help christian perform better in these areas of their daily lives. Thus, all posts on the blog must strictly be focused on these core areas"></i>
+                        <select name="category" id="category" class="form-control" required>
+                            <option value="<%=postContent.category%>" selected disabled hidden><%=postContent.category%></option>
+                            <option value="Faith">Faith</option>
+                            <option value="Love">Love</option>
+                            <option value="Church">Church</option>
+                            <option value="Business">Business</option>
+                            <option value="Career">Career</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="summary">Post Summary</label> <i class="fa fa-info-circle" aria-hidden="true"
+                        title="Give a short summary on what your post is about. This is will be used for display purposes and will most likely show up on serp"></i>
+                    <textarea name="summary" class="form-control" id="summary" maxlength="160" rows="3"><%=postContent.summary%></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="tiny">Content Body</label>
+                    <textarea id="tiny" name="contentBody"><%=postContent.contentBody%></textarea>
+                    <small id="guideBlock" class="form-text text-muted">
+                        Note: <br>
+                        <ul>
+                            <li>
+                                Avoid the use of 'H1 headings' in your content, as your title is already rendered as a H1 heading. It is bad SEO practice to have more than one H1 heading in a page
+                            </li>
+                        </ul>
+                      </small>
+                </div>
+                <button type="submit" class="btn btn-sm btn-style btn-primary mt-5 mb-4 col-12 col-md-3">Edit Post <i
+                        class="fa fa-pencil" aria-hidden="true"></i></button>
+            </form>
+        </main>
+
+        <!-- footer -->
+        <%-include("./blocks/footer-2")%>
+            <!-- //footer -->
+
+            <!-- Template JavaScript -->
+            <script src="/assets/js/jquery-3.3.1.min.js"></script>
+
+            <script src="/assets/js/theme-change.js"></script>
+
+            <!-- stats number counter-->
+            <script src="/assets/js/jquery.waypoints.min.js"></script>
+            <script src="/assets/js/jquery.countup.js"></script>
+            <script>
+                $('.counter').countUp();
+            </script>
+            <!-- //stats number counter -->
+
+            <script src="/assets/js/owl.carousel.js"></script>
+            <!-- script for banner slider-->
+            <script>
+                $(document).ready(function () {
+                    $('.owl-one').owlCarousel({
+                        loop: true,
+                        margin: 0,
+                        nav: false,
+                        dots: false,
+                        responsiveClass: true,
+                        autoplay: true,
+                        autoplayTimeout: 5000,
+                        autoplaySpeed: 1000,
+                        autoplayHoverPause: false,
+                        responsive: {
+                            0: {
+                                items: 1
+                            },
+                            480: {
+                                items: 1
+                            },
+                            667: {
+                                items: 1
+                            },
+                            1000: {
+                                items: 1,
+                                nav: true
+                            }
+                        }
+                    })
+                })
+            </script>
+            <!-- //script -->
+
+            <!-- script for tesimonials carousel slider -->
+            <script>
+                $(document).ready(function () {
+                    $("#owl-demo1").owlCarousel({
+                        loop: true,
+                        margin: 20,
+                        nav: false,
+                        responsiveClass: true,
+                        responsive: {
+                            0: {
+                                items: 1,
+                                nav: false
+                            },
+                            768: {
+                                items: 2,
+                                nav: false
+                            },
+                            1000: {
+                                items: 3,
+                                nav: false,
+                                loop: false
+                            }
+                        }
+                    })
+                })
+            </script>
+            <!-- //script for tesimonials carousel slider -->
+
+            <!-- disable body scroll which navbar is in active -->
+            <script>
+                $(function () {
+                    $('.navbar-toggler').click(function () {
+                        $('body').toggleClass('noscroll');
+                    })
+                });
+            </script>
+            <!-- disable body scroll which navbar is in active -->
+
+            <!--/MENU-JS-->
+            <script>
+                // $(window).on("scroll", function () {
+                //     var scroll = $(window).scrollTop();
+
+                //     if (scroll >= 80) {
+                //         $("#site-header").addClass("nav-fixed");
+                //     } else {
+                //         $("#site-header").removeClass("nav-fixed");
+                //     }
+                // });
+
+                //Main navigation Active Class Add Remove
+                $(".navbar-toggler").on("click", function () {
+                    $("header").toggleClass("active");
+                });
+                $(document).on("ready", function () {
+                    if ($(window).width() > 991) {
+                        $("header").removeClass("active");
+                    }
+                    $(window).on("resize", function () {
+                        if ($(window).width() > 991) {
+                            $("header").removeClass("active");
+                        }
+                    });
+                });
+            </script>
+            <!--//MENU-JS-->
+
+            <script src="/assets/js/bootstrap.min.js"></script>
+
+
+</body>
+
+</html>

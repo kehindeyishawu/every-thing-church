@@ -1,17 +1,20 @@
 const express = require("express");
 const router = express.Router();
-const {blogPost, user} = require("../models")
+const sanitizeHtml = require("sanitize-html");
+const {blogPost} = require("../models")
 const {isLoggedIn, postAuthorization} = require("../middlewares");
 const dayjs = require("dayjs");
 
 
 // Edit post route
 router.get("/:id/edit", isLoggedIn, postAuthorization, (req, res)=>{
-    res.locals.postContent.formRouteAndMethod = `${res.locals.postContent.id}?_method=patch`;
-    return res.render("posts-form")
+    return res.render("edit-post-form")
 })
 
 router.patch("/:id", isLoggedIn, postAuthorization, (req, res)=>{
+    let postImage = req.body.image;
+    delete req.body.image;
+    req.body.contentBody = sanitizeHtml(req.body.contentBody);
     blogPost.findByIdAndUpdate(req.params.id, req.body, (err, updatedPost)=>{
         if (err){
             req.flash("error", err.message)
@@ -38,7 +41,7 @@ router.get("/:id/:title", (req, res) => {
 
 // Create new post route
 router.get("/new", isLoggedIn, (req, res)=>{
-    res.render("posts-form", {postContent: ""})
+    res.render("create-post-form")
 })
 
 router.post("/", isLoggedIn, (req, res)=>{
@@ -50,14 +53,26 @@ router.post("/", isLoggedIn, (req, res)=>{
     const {firstName, lastName, id} = req.user;
     req.body.author = `${firstName} ${lastName}`
     req.body.authorId = id;
+    req.body.contentBody = sanitizeHtml(req.body.contentBody);
     blogPost.create(req.body, (err, createdPost)=>{
         if(err){
             req.flash("error", err.message);
-            return res.render("posts-form");
+            return res.render("create-post-form");
         }
         res.redirect(`/post/${createdPost.id}/${createdPost.title}`)
     })
 })
 
+// Delete blog post route
+router.delete("/id", isLoggedIn, postAuthorization, (req, res)=>{
+    blogPost.findByIdAndDelete(req.params.id, (err)=>{
+        if (err){
+            req.flash("error", err.message);
+            return res.redirect(`/post/${res.locals.postContent.id}/${res.locals.postContent.title}`);
+        }
+        req.flash("success", "Blog post deleted");
+        res.redirect("/dashboard");
+    })
+})
 
 module.exports = router
