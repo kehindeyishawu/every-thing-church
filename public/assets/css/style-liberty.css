@@ -12612,7 +12612,7 @@ a.admin {
   grid-auto-flow: column;
   grid-gap: 30px; }
 
-.text-11 .text11-content h5.quote {
+.text-11 .text11-content blockquote.quote {
   padding: 30px;
   border-left: 2px solid var(--primary-color);
   background: var(--bg-color);
@@ -12793,7 +12793,7 @@ a.blog-desc1:hover {
   color: var(--primary-color); }
 
 @media (max-width: 992px) {
-  .text-11 .text11-content h5.quote {
+  .text-11 .text11-content blockquote.quote {
     margin: 40px 0; } }
 
 @media (max-width: 736px) {
@@ -12817,7 +12817,7 @@ a.blog-desc1:hover {
 @media (max-width: 480px) {
   .text-11 .text11-content p {
     margin-top: 15px; }
-  .text-11 .text11-content h5.quote {
+  .text-11 .text11-content blockquote.quote {
     font-size: 20px;
     line-height: 32px; }
   .text-11 .text11-content h6 {
@@ -12863,7 +12863,7 @@ a.blog-desc1:hover {
     margin-bottom: 15px; } }
 
 @media (max-width: 384px) {
-  .text-11 .text11-content h5.quote {
+  .text-11 .text11-content blockquote.quote {
     font-size: 20px !important;
     line-height: 30px;
     padding: 25px; } }
@@ -12999,3 +12999,20 @@ a.blog-desc1:hover {
 /* /contact1 */
 
 /*# sourceMappingURL=style-liberty.css.map */
+
+/* custom Css */
+#post-ammend a{
+  color: var(--heading-color);
+}
+#post-ammend a:hover{
+  color: #FE79A2;
+}
+#post-ammend button{
+  border: none;
+  background-color: var(--bg-color);
+  color: var(--heading-color);
+  font-weight: bold;
+}
+#post-ammend button:hover{
+  color: #FE79A2;
+}

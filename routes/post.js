@@ -14,7 +14,7 @@ router.get("/:id/edit", isLoggedIn, postAuthorization, (req, res)=>{
 router.patch("/:id", isLoggedIn, postAuthorization, (req, res)=>{
     let postImage = req.body.image;
     delete req.body.image;
-    req.body.contentBody = sanitizeHtml(req.body.contentBody);
+    req.body.contentBody = sanitizeHtml(req.body.contentBody, {allowedAttributes: false});
     blogPost.findByIdAndUpdate(req.params.id, req.body, (err, updatedPost)=>{
         if (err){
             req.flash("error", err.message)
@@ -53,7 +53,7 @@ router.post("/", isLoggedIn, (req, res)=>{
     const {firstName, lastName, id} = req.user;
     req.body.author = `${firstName} ${lastName}`
     req.body.authorId = id;
-    req.body.contentBody = sanitizeHtml(req.body.contentBody);
+    req.body.contentBody = sanitizeHtml(req.body.contentBody, {allowedAttributes: false});
     blogPost.create(req.body, (err, createdPost)=>{
         if(err){
             req.flash("error", err.message);

@@ -10,10 +10,12 @@ Essential addons
 - Delete all users & post after completion and reset
 - Move h5 style to blockquote tag
 - Forbid "?" charcter on edit post form
+- align items center at home page blogs excerpts
 
 
 
 Secondary addons
+- Create confirm password input on create account page
 - add writer name back to listed blog post on everythingchurch
 - restrict image upload size
 - truncate blogTitle also home page or put limit on the character users can input
@@ -33,3 +35,4 @@ Secondary addons
 - correct vh to normal height on signup/login form 
 - Create User profile page
 - Apply appropriate status code to some routes
+- Put a browse section under the homepage, which has no picture. But just cards and author name. The content included in the cards like other blogs
