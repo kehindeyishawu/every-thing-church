@@ -77,7 +77,12 @@ app.get("/signup", (req, res) => {
     res.render("signup-page")
 })
 app.get("/dashboard", isLoggedIn, (req, res) => {
-    res.render("dashboard")
+    blogPost.find({authorId: req.user.id}, (err, foundPosts) => {
+        if (err) {
+            return res.send(err)
+        }
+        res.render("dashboard", { blogPosts: foundPosts })
+    })
 })
 // app.get("/sample", (req, res)=>{
 //     res.render("sample")
@@ -90,5 +95,5 @@ app.use((req, res, next) => {
 
 // Server initialization
 app.listen(process.env.PORT || 3000, () => {
-    console.log(`Server has started running on ${process.env.PORT}`)
+    console.log(`Server has started running on ${process.env.PORT || 3000}`)
 })

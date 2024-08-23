@@ -78,7 +78,7 @@
                 <!-- Modal -->
                 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                   <div class="modal-dialog">
-                    <form action="/" method="get" class="modal-content">
+                    <form action="/post/<%=post.id%>?_method=delete" method="post" class="modal-content">
                       <div class="modal-header">
                         <h5 class="modal-title" id="exampleModalLabel">Are you really sure about this?</h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -110,7 +110,7 @@
                             <div class="card">
                                 <div class="card-header p-0 position-relative">
                                     <a href="blog-single.html" class="zoom d-block">
-                                        <img class="card-img-bottom d-block" src="/assets/images/c1.jpg"
+                                        <img class="card-img-bottom d-block" src="https://res.cloudinary.com/dhoos5y9x/image/upload/ar_570:380,c_fill,f_auto,g_center,q_auto,w_1200/v1724344824/blog/champion-march.jpg"
                                             alt="Card image cap">
                                     </a>
                                     <div class="post-pos">
@@ -133,12 +133,11 @@
                                             </li>
                                         </ul>
                                     </div>
-                                    <a href="blog-single.html" class="course-desc">Learning to Write as a clean Professional
-                                        Author</a>
-                                        <p class="mt-3">Lorem ipsum dolor sit amet dolor et elit. Explicabo, enim.</p>
+                                    <a href="/post/63be18dec4612d4065261603/The Beatitudes: A Path to Blessed Living" class="course-desc">The Beatitudes: A Path to Blessed Living</a>
+                                        <p class="mt-3">Jesus’ teachings on true happiness</p>
                                 </div>
                                 <div class="card-footer">
-                                    <a href="blog-single.html" class="read">Read More <span class="fa fa-angle-right ml-1"></span></a>
+                                    <a href="/post/63be18dec4612d4065261603/The Beatitudes: A Path to Blessed Living" class="read">Read More <span class="fa fa-angle-right ml-1"></span></a>
                                 </div>
                             </div>
                         </div>
@@ -147,7 +146,7 @@
                             <div class="card">
                                 <div class="card-header p-0 position-relative">
                                     <a href="blog-single.html" class="zoom d-block">
-                                        <img class="card-img-bottom d-block" src="/assets/images/c2.jpg"
+                                        <img class="card-img-bottom d-block" src="https://res.cloudinary.com/dhoos5y9x/image/upload/ar_570:380,c_fill,f_auto,g_faces,q_auto,w_700/v1724299182/blog/prodigal-son.jpg"
                                             alt="Card image cap">
                                     </a>
                                 </div>
@@ -167,12 +166,12 @@
                                             </li>
                                         </ul>
                                     </div>
-                                    <a href="blog-single.html" class="course-desc">Learn Master JQuery in a Short Period of Time</a>
+                                    <a href="/post/66c77b442eb044279bf73eb8/The Prodigal Son: A Story of Redemption and Grace" class="course-desc">The Prodigal Son: A Story of Redemption and Grace</a>
                                     
-                                    <p class="mt-3">Lorem ipsum dolor sit amet dolor et elit. Explicabo, enim.</p>
+                                    <p class="mt-3">A story of forgiveness and redemption</p>
                                 </div>
                                 <div class="card-footer">
-                                    <a href="blog-single.html" class="read">Read More <span class="fa fa-angle-right ml-1"></span></a>
+                                    <a href="/post/66c77b442eb044279bf73eb8/The Prodigal Son: A Story of Redemption and Grace" class="read">Read More <span class="fa fa-angle-right ml-1"></span></a>
                                 </div>
                             </div>
                         </div>
@@ -197,18 +196,34 @@
 
   const deleteForm = document.getElementById("delete-form");
   const deleteButton = document.getElementById("delete-button");
+  let disableDeleteButton = ()=>{
+    deleteButton.setAttribute("disabled", "true");
+    deleteButton.classList.add("btn-outline-primary");
+    deleteButton.classList.remove("btn-primary");
+    deleteButton.classList.remove("text-white");
+  }
+  disableDeleteButton()
+
   deleteForm.addEventListener("input", (e)=>{
-    if (deleteForm.validity.patternMismatch){
-      console.log("mismatched")
-      // deleteButton.removeAttribute("disabled");
-      // deleteButton.classList.remove("btn-outline-primary");
-      // deleteButton.classList.add("btn-primary");
+    if (deleteForm.validity.patternMismatch || e.target.value.length < 1){
+      disableDeleteButton()
     }else{
-      console.log("matched")
-      // deleteButton.setAttribute("disabled");
-      // deleteButton.classList.add("btn-outline-primary");
-      // deleteButton.classList.remove("btn-primary");
+      deleteButton.removeAttribute("disabled");
+      deleteButton.classList.remove("btn-outline-primary");
+      deleteButton.classList.add("btn-primary");
+      deleteButton.classList.add("text-white");
     }
+    // if (!e.target.value === deleteForm.getAttribute("pattern")){
+    //   console.log("mismatched")
+    //   // deleteButton.removeAttribute("disabled");
+    //   // deleteButton.classList.remove("btn-outline-primary");
+    //   // deleteButton.classList.add("btn-primary");
+    // }else{
+    //   console.log("matched")
+    //   // deleteButton.setAttribute("disabled");
+    //   // deleteButton.classList.add("btn-outline-primary");
+    //   // deleteButton.classList.remove("btn-primary");
+    // }
   })
 
   // const lists = document.querySelectorAll("ol");

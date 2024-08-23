@@ -10430,7 +10430,7 @@ a.login:hover {
   position: relative; }
 
 .w3l-main-slider .banner-view {
-  background: url(../images/banner1.jpg) no-repeat top;
+  background: url(https://res.cloudinary.com/dhoos5y9x/image/upload/ar_1760:900,c_fill,f_auto,g_center,q_auto,w_1760/v1724344825/blog/jesus.jpg) no-repeat top;
   background-size: cover;
   min-height: 100vh;
   position: relative;

@@ -30,10 +30,9 @@
                                 <div class="banner-info">
                                     <div class="container">
                                         <div class="banner-info-bg">
-                                            <h5>50% Discount on all Popular Courses</h5>
-                                            <p class="mt-4 pr-lg-4">Take the first step to your journey to success with
-                                                us</p>
-                                            <a class="btn btn-style btn-primary mt-sm-5 mt-4 mr-2" href="about.html">
+                                            <h5>Discover God’s Love and Grace Daily</h5>
+                                            <p class="mt-4 pr-lg-4">Join us on a journey to deepen your faith and transform your life through God’s word</p>
+                                            <a class="btn btn-style btn-primary mt-sm-5 mt-4 mr-2" href="#main-posts">
                                                 Ready to
                                                 get started?</a>
                                         </div>
@@ -48,9 +47,9 @@
                                 <div class="banner-info">
                                     <div class="container">
                                         <div class="banner-info-bg">
-                                            <h5>Learn and Improve Yourself in Less Time </h5>
-                                            <p class="mt-4 pr-lg-4">Our self improvement courses is very effective </p>
-                                            <a class="btn btn-style btn-primary mt-sm-5 mt-4 mr-2" href="about.html">
+                                            <h5>Grow Spiritually with Every Visit</h5>
+                                            <p class="mt-4 pr-lg-4">Explore our resources to strengthen your relationship with God and become a better believer</p>
+                                            <a class="btn btn-style btn-primary mt-sm-5 mt-4 mr-2" href="#main-posts">
                                                 Ready to
                                                 get started?</a>
                                         </div>
@@ -65,10 +64,9 @@
                                 <div class="banner-info">
                                     <div class="container">
                                         <div class="banner-info-bg">
-                                            <h5>Be More Productive to Be More Successful</h5>
-                                            <p class="mt-4 pr-lg-4">Don't waste your time, check out our productive
-                                                courses</p>
-                                            <a class="btn btn-style btn-primary mt-sm-5 mt-4 mr-2" href="about.html">
+                                            <h5>Deepen Your Relationship with Christ</h5>
+                                            <p class="mt-4 pr-lg-4">Discover practical steps to walk in His light daily</p>
+                                            <a class="btn btn-style btn-primary mt-sm-5 mt-4 mr-2" href="#main-posts">
                                                 Ready to
                                                 get started?</a>
                                         </div>
@@ -83,10 +81,9 @@
                                 <div class="banner-info">
                                     <div class="container">
                                         <div class="banner-info-bg">
-                                            <h5>Enhance your skills with best online courses</h5>
-                                            <p class="mt-4 pr-lg-4">Take the first step to your journey to success with
-                                                us</p>
-                                            <a class="btn btn-style btn-primary mt-sm-5 mt-4 mr-2" href="about.html">
+                                            <h5>Transform Your Life Through Christ</h5>
+                                            <p class="mt-4 pr-lg-4">Stay connected with us to continually grow in faith and become the best version of yourself</p>
+                                            <a class="btn btn-style btn-primary mt-sm-5 mt-4 mr-2" href="#main-posts">
                                                 Ready to
                                                 get started?</a>
                                         </div>
@@ -106,7 +103,7 @@
             </div>
         </section>
         <!-- /main-slider -->
-        <section class="w3l-courses">
+        <section class="w3l-courses" id="main-posts">
             <div class="w3l-blog pb-5" id="courses">
                 <div class="container py-lg-5 py-md-4 py-2">
                     <div class="row">
@@ -749,12 +746,12 @@
                     <!-- pagination -->
                     <div class="pagination-wrapper mt-5 pt-lg-3 text-center">
                         <ul class="page-pagination">
-                            <li><a class="next" href="#url"><span class="fa fa-angle-left"></span> Prev</a></li>
+                            <li><a class="next" href="#ua"><span class="fa fa-angle-left"></span> Prev</a></li>
                             <li><span aria-current="page" class="page-numbers current">1</span></li>
-                            <li><a class="page-numbers" href="#url">2</a></li>
-                            <li><a class="page-numbers" href="#url">3</a></li>
-                            <li><a class="page-numbers" href="#url">....</a></li>
-                            <li><a class="next" href="#url">Next <span class="fa fa-angle-right"></span></a></li>
+                            <li><a class="page-numbers" href="#u1">2</a></li>
+                            <li><a class="page-numbers" href="#u2">3</a></li>
+                            <li><a class="page-numbers" href="#u3">....</a></li>
+                            <li><a class="next" href="#uz">Next <span class="fa fa-angle-right"></span></a></li>
                         </ul>
                     </div>
                     <!-- //pagination -->
@@ -764,7 +761,13 @@
         <!-- footer -->
         <%- include("./blocks/footer-1.ejs") %>
             <!-- //footer -->
-
+            <script>
+                // pagination disappear
+                let paginationWrapper = document.querySelector(".pagination-wrapper")
+                paginationWrapper.addEventListener("click", ()=>{
+                    paginationWrapper.replaceChildren("There are no more posts to display")
+                })
+            </script>
             <!-- Template JavaScript -->
             <script src="assets/js/jquery-3.3.1.min.js"></script>
 

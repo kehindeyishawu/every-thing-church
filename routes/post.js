@@ -54,6 +54,7 @@ router.post("/", isLoggedIn, (req, res)=>{
     req.body.author = `${firstName} ${lastName}`
     req.body.authorId = id;
     req.body.contentBody = sanitizeHtml(req.body.contentBody, {allowedAttributes: false});
+    req.body.titleImage = "https://res.cloudinary.com/dhoos5y9x/image/upload/ar_570:380,c_fill,f_auto,g_center,q_auto,w_1200/v1724380728/blog/christ-community.jpg"
     blogPost.create(req.body, (err, createdPost)=>{
         if(err){
             req.flash("error", err.message);
@@ -64,7 +65,7 @@ router.post("/", isLoggedIn, (req, res)=>{
 })
 
 // Delete blog post route
-router.delete("/id", isLoggedIn, postAuthorization, (req, res)=>{
+router.delete("/:id", isLoggedIn, postAuthorization, (req, res)=>{
     blogPost.findByIdAndDelete(req.params.id, (err)=>{
         if (err){
             req.flash("error", err.message);

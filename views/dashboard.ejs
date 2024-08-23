@@ -22,6 +22,14 @@
         table a {
             color: var(--heading-color) !important;
         }
+        #inputState{
+            background-color: transparent;
+            font-size: 1rem;
+            cursor: pointer;
+        }
+        #inputState:focus{
+            box-shadow: none;
+        }
     </style>
 </head>
 
@@ -68,17 +76,17 @@
                                 <td>@mdo</td>
                             </tr>
                             <tr>
-                                <td>Jacob</td>
+                                <td class="text-truncate text-left">I am Jacob</td>
                                 <td>
-                                    <div class="row justify-content-center align-items-center">
+                                    <div class="row justify-content-center align-items-center status-dropdown">
                                         <small><i class="fa fa-dot-circle-o text-success col-3" aria-hidden="true"></i></small>
-                                        <select id="inputState" class="form-control form-control-sm border-0 col-7"> 
-                                          <option >Published</option>
-                                          <option selected>Pub-2</option>
-                                          <option>...</option>
+                                        <select id="inputState" class="form-control form-control-sm border-0 col-9"> 
+                                            <option>Published</option>
+                                            <option selected>Pub-2</option>
+                                            <option>...</option>
                                         </select>
-                                      </div>
-                                  </td>
+                                    </div>
+                                </td>
                                 <td><a href=""><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a></td>
                                 <td>Love</td>
                                 <td><a href=""><i class="fa fa-trash-o" aria-hidden="true"></i></a></td>
